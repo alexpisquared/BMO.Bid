@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameworkInput type="DotNet" xmlns="http://www.ibm.com/FrameworkInput">
+	<WaflFile>C:\bm\olp\V0\OLP\BMO.OLP.Common\BMO.OLP.Common_frameworksCLIDotNet.wafl</WaflFile>
+	<LogConfig>C:\bm\olp\V0\OLP\BMO.OLP.Common\BMO.OLP.Common_frameworksCLIDotNet_waflLogConfig.xml</LogConfig>
+	<HandlerJarDir>C:\Program Files (x86)\IBM\AppScanSource\waflgens</HandlerJarDir>
+	<ProjectFile>C:\bm\olp\V0\OLP\BMO.OLP.Common\BMO.OLP.Common.csproj</ProjectFile>
+	<DotNetInfo>
+		<WalaScopeFile>C:\ProgramData\IBM\AppScanSource\temp\BMO.OLP.Common.scope</WalaScopeFile>
+		<Options>
+			<Property name="aspnet.precompile.dir" value="C:\bm\olp\V0\OLP\BMO.OLP.Common"></Property>
+			<Property name="application.file" value="C:\bm\olp\V0\OLP\BMO.OLP.sln"></Property>
+			<Property name="project.configuration" value="Debug|Any CPU"></Property>
+		</Options>
+	</DotNetInfo>
+</FrameworkInput>

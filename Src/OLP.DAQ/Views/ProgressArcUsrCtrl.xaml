@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="OLP.DAQ.Views.ProgressArcUsrCtrl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+						 xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 						 
+						 >
+	<Grid>
+		<Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="45" >
+
+			<Ellipse Margin="1" Fill="#0000" Stroke="#246" StrokeThickness="1" />
+
+			<ed:Arc Margin="0" ArcThickness="3" EndAngle="{Binding PgrDeg}" Fill="#aeF" StartAngle="0" StrokeThickness="0" Stretch="None" >
+				<ed:Arc.Effect>
+					<BlurEffect Radius="10"/>
+				</ed:Arc.Effect>
+			</ed:Arc>
+			
+			<ed:Arc Margin="1" ArcThickness="1" EndAngle="{Binding PgrDeg}" Fill="#0bF" StartAngle="0" StrokeThickness="0" Stretch="None" />
+			
+		</Grid>
+	</Grid>
+</UserControl>

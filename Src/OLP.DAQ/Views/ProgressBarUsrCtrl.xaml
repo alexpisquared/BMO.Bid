@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="OLP.DAQ.Views.ProgressBarUsrCtrl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+						 xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 						 
+             mc:Ignorable="d" d:DesignHeight="30" d:DesignWidth="300" >
+	<Grid >
+		<Grid Background="#246" Height="1" />
+
+    <Rectangle HorizontalAlignment="Left" Margin="0" Height="3" Fill="#aeF" Width="{Binding PgrDeg}" x:Name="progressRect" >
+			<Rectangle.Effect>
+				<BlurEffect Radius="10"/>
+			</Rectangle.Effect>
+		</Rectangle>
+
+		<Rectangle HorizontalAlignment="Left" Margin="1" Height="1" Fill="#0bf" Width="{Binding PgrDeg, FallbackValue=77}" />
+
+	</Grid>
+</UserControl>

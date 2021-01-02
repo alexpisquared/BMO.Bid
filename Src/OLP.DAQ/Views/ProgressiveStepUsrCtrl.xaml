@@ -1,0 +1,56 @@
+﻿<UserControl x:Name="ps1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" xmlns:local="clr-namespace:OLP.DAQ.Views" x:Class="OLP.DAQ.Views.ProgressiveStepUsrCtrl" mc:Ignorable="d" 
+							 d:DesignHeight="65" d:DesignWidth="300" MinHeight="75">
+	<Grid>
+		<Grid.Resources>
+			<Style TargetType="FrameworkElement">
+				<!--<Setter Property="ToolTipService.ShowDuration" Value="29000" />-->
+			</Style>
+		</Grid.Resources>
+		<Border CornerRadius="5" BorderBrush="#048" BorderThickness="2" Margin="5" >
+			<Border.Background>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="#222" Offset="0"/>
+					<GradientStop Color="#444" Offset="1"/>
+				</LinearGradientBrush>
+			</Border.Background>
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="3"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="1"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="1"/>
+				</Grid.ColumnDefinitions>
+
+				<local:ProgressColUsrCtrl Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" Grid.RowSpan="4" Margin="-1" CurVal="{Binding ElementName=ps1, Path=CurPos, FallbackValue=19}" MaxVal="{Binding ElementName=ps1, Path=MaxPos}" x:Name="pc1"/>
+
+				<local:ProgressArcUsrCtrl Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="45" Margin="10" 
+																		MaxVal="{Binding ElementName=ps1, Path=MaxPos, FallbackValue=360}" CurVal="{Binding ElementName=ps1, Path=CurPos, FallbackValue=0}" x:Name="pa1"/>
+
+				<!--<local:ProgressBarUsrCtrl Grid.ColumnSpan="4" Grid.Row="3" Margin="1" Height="3" VerticalAlignment="Bottom"
+																		MaxVal="{Binding ElementName=ps1, Path=MaxPos, FallbackValue=360}" 
+																		CurVal="{Binding ElementName=ps1, Path=CurPos, FallbackValue=133}" x:Name="pb1"/>-->
+
+				<TextBlock Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Center" Foreground="#08f" FontSize="16" Text="{Binding StpNme, FallbackValue='Step Name'}"  />
+				<TextBlock Grid.Row="2" Grid.Column="2"  HorizontalAlignment="Left"   Foreground="#ddd" FontSize="6" ToolTip="{Binding StpDsc, FallbackValue='Step Descr'}" 
+						TextWrapping="WrapWithOverflow" Grid.ColumnSpan="2" ><Run Text="{Binding StpDsc}"/><InlineUIContainer>
+						</InlineUIContainer></TextBlock>
+
+				<StackPanel Grid.Row="1" Grid.Column="3" Margin="2.55"  Orientation="Horizontal" HorizontalAlignment="Right">
+					<Button   Content="►" Margin="1 0 1 2" Width="22" Height="22" ToolTip=" Start " Foreground="#0af" Background="Transparent" Padding="-6" FontSize="22" BorderThickness="0" />
+          <Button   Content="◙" Margin="1 0 1 2" Width="22" Height="22" ToolTip=" Stop  " Foreground="#d00" Background="Transparent" Padding="-3" FontSize="16" BorderThickness="0" />
+					<CheckBox Margin="2 6" ToolTip="Run Full &#xA;&#xA;(i.e.: not last day only)" Background="#3888" Foreground="#0f0" IsChecked="True" IsEnabled="True" />
+				</StackPanel>
+
+				<!--<ProgressBar Grid.ColumnSpan="4" Grid.Row="3" Margin="1" Height="5" Maximum="{Binding ElementName=ps1, Path=MaxPos}" Value="{Binding ElementName=ps1, Path=CurPos}" BorderThickness="0" Background="#000" />-->
+
+			</Grid>
+		</Border>
+	</Grid>
+</UserControl>
