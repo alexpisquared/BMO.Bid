@@ -2,7 +2,7 @@
 
 namespace BMO.OLP.Common.Enums
 {
-	[Obsolete]
+	// [Obsolete] :why Copilot decides to mark it such?
 	public class MatchStatus
 	{
 		public static MatchStatus NoMatchFound = new MatchStatus("m0");
